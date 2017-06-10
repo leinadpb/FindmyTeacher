@@ -58,20 +58,29 @@
 				<h4 class="media-heading">{{ $p->title }}</h4>
 				{{ $p->content }}
 				<div>
+					
+		<!-- prueba -->
+	<div class="actionBox">
 					@if(\Illuminate\Support\Facades\Auth::check())
 						<a type="button" class="btn btn-info btn-sm" href="">Eliminar</a>
 					@endif
-					<br>
-						@foreach($p->commentblogs()->orderBy('created_at', 'desc')->get() as $c)
-							<div class="media">
-								<div class="media-body">
-									<br>
-									<div class="container-fluid myAnswerBox">
-										{{ $c->content }}
-									</div>
-								</div>
-							</div>
-						@endforeach
+        <ul class="commentList">
+
+			@foreach($p->commentblogs()->orderBy('created_at', 'asc')->get() as $c)
+			<li>
+                <div class="commenterImage">
+                  <img src="{{URL::to('images/comment.ico')}}" />
+                </div>
+                <div class="commentText">
+                    <p class="">{{ $c->content }}</p> <span class="date sub-text">On {{ $c->created_at }}</span>
+                </div>
+            </li>
+			@endforeach
+            
+        </ul>
+       
+    </div>
+    <!-- prueba -->
 						<br>
 					<div class="container-fluid myAnswerBox">
 						<form action="{{ route('respond-toPost', ['id' => $p->id]) }}" method="post" class="form-horizontal">
