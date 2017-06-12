@@ -1,6 +1,12 @@
 /**
 	MAIN STYLES
 */
+/*NAVBAR*/
+.navbar-custom {
+    color: #FFFFFF;
+    background-color: #314C72;
+}
+
 .myTitle{
 	font-family: 'Ramabhadra', sans-serif;
 	color: #08ABDE;
@@ -20,7 +26,19 @@
     padding-right:1.9em;
 }
 .myComment{
-	border:solid groove black;
+	border:solid black;
+}
+
+/*FOOTER */
+.myFooter{
+    background-color: #0A1B2A;
+    color:white;
+    width:90%;
+    padding:10px;
+    border-radius: 3px;
+}
+.menuList li a{
+    color:#01A9DB;
 }
 
 /*COMMMENTS */

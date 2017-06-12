@@ -34,4 +34,11 @@ class PostblogController extends Controller
         return redirect()->back();
 
     }
+
+    public function deletePostblog($id){
+        $post = Postblog::find($id);
+        $post->commentblogs()->delete();
+        $post->delete();
+        return redirect()->back();
+    }
 }

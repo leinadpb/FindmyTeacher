@@ -1,9 +1,9 @@
 <footer>
-    <div class="container">
-        <div class="row">
+    <div class="container myFooter">
+        <div class="">
             <div class="col-sm-4">
                 <div class="footer-block">
-                    <ul class="list-inline footer-menu">
+                    <ul class="list-inline footer-menu menuList">
                         <li><a href="{{ route('terminos') }}">Términos de uso</a></li> |
                         <li><a href="{{ route('politicas') }}">Políticas de privacidad</a></li>
                     </ul>

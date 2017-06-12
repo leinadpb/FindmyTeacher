@@ -61,7 +61,7 @@
 					<!-- Nested comments -->
 					<div class="container">
 						@if(\Illuminate\Support\Facades\Auth::check())
-							<a type="button" class="btn btn-info btn-sm" href="">Eliminar</a>
+							<a type="button" class="btn btn-info btn-sm" href="{{ route('delete-postblog', ['id' => $p->id]) }}">Eliminar</a>
 						@endif
 						<br>
 						<div class="list-inline">

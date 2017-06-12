@@ -48,6 +48,7 @@ Route::get('terminos-de-uso', function(){
 })->name('terminos');
 
 Route::get('blog',['uses' => 'PostblogController@showBlog'])->name('blog');
+Route::get('blog/{id}/delete', ['uses' => 'PostblogController@deletePostblog'])->name('delete-postblog');
 
 //Admin
 

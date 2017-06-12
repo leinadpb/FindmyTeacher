@@ -1,5 +1,5 @@
 <!-- HEADER -->
-<nav class="navbar navbar-default navbar-static-top">
+<nav class="navbar navbar-default">
   <div class="container">
     <div class="navbar-header" align='center'>
       <a class="navbar-brand" href="{{ route('homeapp') }}">Find my Teacher</a>
