@@ -34,10 +34,16 @@
 					</span>
 				</div><!-- /input-group -->
 				<br>
-				<label class="checkbox-inline">
-					<input type="radio" name="option" id="inlineRadio3" value="byWork"> Por universidad
-					<input type="radio" name="option" id="inlineRadio3" value="byName"> Por nombre
-				</label>
+				<div class="radio">
+					<label>
+						<input type="radio" name="option" id="inlineRadio3" value="byWork" checked> Por universidad
+					</label>
+				</div>
+				<div class="radio">
+					<label>
+						<input type="radio" name="option" id="inlineRadio3" value="byName"> Por nombre
+					</label>
+				</div>
 			</div><!-- /.col-lg-6 -->
 		</div>
 		{{ csrf_field() }}

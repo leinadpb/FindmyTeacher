@@ -7,6 +7,15 @@
     background-color: #314C72;
 }
 
+.fixComments{
+    margin-right: 20px;
+    margin-left: 25px;
+}
+.withBorder{
+    border:1px groove lightgray;
+    padding:5px;
+}
+
 .myTitle{
 	font-family: 'Ramabhadra', sans-serif;
 	color: #08ABDE;

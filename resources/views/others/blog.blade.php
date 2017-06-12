@@ -56,7 +56,7 @@
 						<img class="media-object" width="50px" height="40px" src="{{ URL::to('images/post.png') }}" alt="">
 					</a>
 				</div>
-				<div class="media-body">
+				<div class="media-content">
 					<h4 class="media-heading">{{ $p->title }}</h4>
 					{{ $p->content }}
 					<!-- Nested comments -->
@@ -66,7 +66,7 @@
 						@endif
 						<br>
 						<div class="list-inline">
-							<ul class="commentList list-group">
+							<ul class="commentList list-group fixComments">
 								@foreach($p->commentblogs()->orderBy('created_at', 'asc')->get() as $c)
 								<li class="list-group-item">
 									<div class="commenterImage">
@@ -82,8 +82,8 @@
 
 					</div>
 					<!-- prueba --><br>
-					<div class="container-fluid">
-						<form action="{{ route('respond-toPost', ['id' => $p->id]) }}" method="post" class="form-horizontal">
+					<div class="">
+						<form action="{{ route('respond-toPost', ['id' => $p->id]) }}" method="post" class="form">
 							<input type="hidden" name="title" value="Anónimo">
 							<input class="form-control" type="text" placeholder="Responder..." maxlength="140" minlength="1" name="answer" required>
 							<input type="hidden" name="id" value="{{ $p->id }}">
