@@ -46,10 +46,11 @@
 	@else
 		<div>{{ count($posts) }} preguntas realizadas.</div>
 	@endif
+	<br>
 
-	<div class="">
+	<ul class="media-list">
 		@foreach($posts as $p)
-			<div class="media">
+			<li class="media">
 				<div class="media-left">
 					<a href="#">
 						<img class="media-object" width="50px" height="40px" src="{{ URL::to('images/post.png') }}" alt="">
@@ -81,7 +82,7 @@
 
 					</div>
 					<!-- prueba --><br>
-					<div class="container-fluid myAnswerBox">
+					<div class="container-fluid">
 						<form action="{{ route('respond-toPost', ['id' => $p->id]) }}" method="post" class="form-horizontal">
 							<input type="hidden" name="title" value="Anónimo">
 							<input class="form-control" type="text" placeholder="Responder..." maxlength="140" minlength="1" name="answer" required>
@@ -91,9 +92,9 @@
 						</form>
 					</div>
 				</div>
-			</div>
+			</li>
 			<hr>
 		@endforeach
-	</div>
+	</ul>
 
 @endsection
