@@ -47,7 +47,7 @@
 		<div>{{ count($posts) }} preguntas realizadas.</div>
 	@endif
 
-	<div class="container-fluid">
+	<div class="container">
 		@foreach($posts as $p)
 			<div class="media">
 				<div class="media-left">
@@ -66,18 +66,20 @@
 						@endif
 						<br>
 
-						<ul class="commentList">
-							@foreach($p->commentblogs()->orderBy('created_at', 'asc')->get() as $c)
-							<li>
-								<div class="commenterImage">
-								  <img src="{{URL::to('images/comment.ico')}}" />
-								</div>
-								<div class="commentText">
-									<p class="">{{ $c->content }}</p> <span class="date sub-text">On {{ $c->created_at }}</span>
-								</div>
-							</li>
-							@endforeach
-						</ul>
+						<div class="list-inline">
+							<ul class="commentList list-group">
+								@foreach($p->commentblogs()->orderBy('created_at', 'asc')->get() as $c)
+								<li class="list-group-item">
+									<div class="commenterImage">
+									  <img src="{{URL::to('images/comment.ico')}}" />
+									</div>
+									<div class="commentText">
+										<p class="">{{ $c->content }}</p> <span class="date sub-text">On {{ $c->created_at }}</span>
+									</div>
+								</li>
+								@endforeach
+							</ul>
+						</div>
 
 					</div>
 					<!-- prueba --><br>
