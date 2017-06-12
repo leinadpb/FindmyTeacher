@@ -88,7 +88,7 @@
 					<div class="">
 						<form action="{{ route('respond-toPost', ['id' => $p->id]) }}" method="post" class="form">
 							<input type="hidden" name="title" value="Anónimo">
-							<input class="form-control" type="text" placeholder="Responder..." maxlength="140" minlength="1" name="answer" required>
+							<input class="form-control" type="text" placeholder="Responder..." name="answer" required>
 							<input type="hidden" name="id" value="{{ $p->id }}">
 							{{ csrf_field() }}
 							<div align="right"><button type="submit" class="btn btn-primary btn-sm">Responder</button></div>
