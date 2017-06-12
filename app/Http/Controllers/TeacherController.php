@@ -61,11 +61,11 @@ class TeacherController extends Controller
 
         if($op == 'byWork'){ //Search by work
 
-            $teachers = Teacher::where('work', '=', $request->input('byText'))->get();
+            $teachers = Teacher::where('work', '=', strtoupper($request->input('byText')))->get();
 
         }else if($op == 'byName'){ //Search by name
 
-            $teachers = Teacher::where('name', '=', $request->input('byText'))->get();
+            $teachers = Teacher::where(strtolower('name'), '=', strtolower($request->input('byText')))->get();
 
         }else{
 
