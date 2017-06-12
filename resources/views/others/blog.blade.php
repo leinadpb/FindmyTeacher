@@ -65,6 +65,9 @@
 							<a type="button" class="btn btn-info btn-sm" href="{{ route('delete-postblog', ['id' => $p->id]) }}">Eliminar</a>
 						@endif
 						<br>
+						@if(count($p->commentblogs()->get()) == 0)
+								<div class="noAnswers"><i>No hay respuestas.</i></div>
+						@endif
 						<div class="list-inline">
 							<ul class="commentList list-group fixComments">
 								@foreach($p->commentblogs()->orderBy('created_at', 'asc')->get() as $c)
@@ -81,7 +84,7 @@
 						</div>
 
 					</div>
-					<!-- prueba --><br>
+					<!-- prueba -->
 					<div class="">
 						<form action="{{ route('respond-toPost', ['id' => $p->id]) }}" method="post" class="form">
 							<input type="hidden" name="title" value="Anónimo">
