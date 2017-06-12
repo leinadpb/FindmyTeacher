@@ -47,25 +47,23 @@
 		<div>{{ count($posts) }} preguntas realizadas.</div>
 	@endif
 
-	<div class="container">
+	<div class="">
 		@foreach($posts as $p)
 			<div class="media">
 				<div class="media-left">
 					<a href="#">
-						<img class="media-object" width="70px" height="60px" src="{{ URL::to('images/post.png') }}" alt="">
+						<img class="media-object" width="50px" height="40px" src="{{ URL::to('images/post.png') }}" alt="">
 					</a>
 				</div>
 				<div class="media-body">
 					<h4 class="media-heading">{{ $p->title }}</h4>
 					{{ $p->content }}
-
-					<!-- prueba -->
-					<div class="container-fluid">
+					<!-- Nested comments -->
+					<div class="container">
 						@if(\Illuminate\Support\Facades\Auth::check())
 							<a type="button" class="btn btn-info btn-sm" href="">Eliminar</a>
 						@endif
 						<br>
-
 						<div class="list-inline">
 							<ul class="commentList list-group">
 								@foreach($p->commentblogs()->orderBy('created_at', 'asc')->get() as $c)
