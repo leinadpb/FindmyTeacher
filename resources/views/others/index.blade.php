@@ -25,19 +25,24 @@
 
 	<!-- Search Box -->
 	<form class="navbar-form" method="post" action="{{ route('search') }}">
-		<div class="form-group">
-			<input type="text" class="form-control" name='byText' placeholder="Buscar" required>
-			<button type="submit" class="btn btn-default">Buscar</button>
+		<div class="row">
+			<div class="col-lg-6">
+				<div class="input-group">
+					<input type="text" name="byText" class="form-control" placeholder="Buscar por...">
+					<span class="input-group-btn">
+						<button class="btn btn-default" type="submit">Buscar</button>
+					</span>
+				</div><!-- /input-group -->
+				<br>
+				<label class="checkbox-inline">
+					<input type="radio" name="option" id="inlineRadio3" value="byWork"> Por universidad
+					<input type="radio" name="option" id="inlineRadio3" value="byName"> Por nombre
+				</label>
+			</div><!-- /.col-lg-6 -->
 		</div>
-		<br>
-		<label class="checkbox-inline">
-			<input type="radio" name="option" id="inlineRadio3" value="byWork"> Por universidad
-			<input type="radio" name="option" id="inlineRadio3" value="byName"> Por nombre
-		</label>
 		{{ csrf_field() }}
-		<br>
-
 	</form>
+
 	<br>
 
 	<div>
