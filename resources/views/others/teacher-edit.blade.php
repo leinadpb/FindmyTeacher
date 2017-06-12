@@ -40,7 +40,7 @@
         <div class="form-group">
             <label class="col-sm-2 control-label">Descripcion</label>
             <div class="col-sm-10">
-                <input type="textarea" class="form-control" id="inputDescription" name="description" placeholder="Breve descripcion..." maxlength="180" minlength="15" value="{{ $teacher->description }}" required>
+                <input type="textarea" class="form-control" id="inputDescription" name="description" placeholder="Breve descripcion..." maxlength="260" minlength="1" value="{{ $teacher->description }}" required>
             </div>
         </div>
 <!--        <input type="hidden" name="id" value="4">  -->

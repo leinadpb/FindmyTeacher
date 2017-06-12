@@ -26,7 +26,7 @@
 			<div class="form-group">
 				<label for="inputPassword3" class="col-sm-2 control-label">Pregunta</label>
 				<div class="col-sm-10">
-					<textarea placeholder="Descripción de la pregunta..." name="content" class="form-control" rows="3" minlength="5" required></textarea>
+					<textarea maxlength="260" placeholder="Descripción de la pregunta..." name="content" class="form-control" rows="3" minlength="5" required></textarea>
 				</div>
 			</div>
 			{{ csrf_field() }}
@@ -84,7 +84,7 @@
 					<div class="container-fluid myAnswerBox">
 						<form action="{{ route('respond-toPost', ['id' => $p->id]) }}" method="post" class="form-horizontal">
 							<input type="hidden" name="title" value="Anónimo">
-							<input class="form-control" type="text" placeholder="Responder..." name="answer" required>
+							<input class="form-control" type="text" placeholder="Responder..." maxlength="140" minlength="1" name="answer" required>
 							<input type="hidden" name="id" value="{{ $p->id }}">
 							{{ csrf_field() }}
 							<div align="right"><button type="submit" class="btn btn-primary btn-sm">Responder</button></div>

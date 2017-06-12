@@ -31,7 +31,7 @@
         <div class="form-group">
             <label class="col-sm-2 control-label">Descripcion</label>
             <div class="col-sm-10">
-                <input type="textarea" class="form-control" id="inputDescription" name="description" placeholder="Breve descripcion: Forma de ser, forma de dar la clase, etc..." maxlength="240" minlength="7" required>
+                <input type="textarea" class="form-control" id="inputDescription" name="description" placeholder="Breve descripcion: Forma de ser, forma de dar la clase, etc..." maxlength="260" minlength="1" required>
             </div>
         </div>
 <!--        <input type="hidden" name="id" value="4">  -->

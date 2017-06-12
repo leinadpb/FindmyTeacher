@@ -19,34 +19,13 @@
 
 	<div align="center"><h1 class="myTitle">{{ $teacher->name }}</h1></div>
 	<hr>
-	<div>
-		<div class="table-responsive">
-			<table class="table table-condensed">
-				<tr class="active">
-					<th style="text-align: center;">
-						Universidad
-					</th>
-					<th style="text-align: center;">
-						Carrera
-					</th>
-					<th style="text-align: center;">
-						Maestria
-					</th>
-				</tr>
-				<tr class="info">
-					<td style="text-align: center;">
-						{{ $teacher->work }}
-					</td>
-					<td style="text-align: center;">
-						{{ $teacher->career }}
-					</td>
-					<td style="text-align: center;">
-						{{ $teacher->master }}
-					</td>
-				</tr>
-			</table>
-		</div>
-	</div>
+	<ul class="list-group">
+		<li class="list-group-item"><b>Universidad: </b> {{ $teacher->work }}</li>
+		<li class="list-group-item"><b>Carrera: </b> {{ $teacher->career }}</li>
+		<li class="list-group-item"><b>Maestría: </b> {{ $teacher->master }}</li>
+		<li class="list-group-item"><b>Breve descripción: </b> {{ $teacher->description }}</li>
+	</ul>
+
 	<br>
 	
 	<form class="form form-horizontal" method="post" action="{{ route('comment', ['id' => $teacher->id]) }}">
@@ -59,7 +38,7 @@
 		<div class="form-group">
 			<label for="inputPassword3" class="col-sm-2 control-label">Contenido</label>
 			<div class="col-sm-10">
-				<textarea placeholder="Haz un comentario..." name="content" class="form-control" rows="3"></textarea>
+				<textarea placeholder="Haz un comentario..." name="content" minlength="1" maxlength="260" class="form-control" rows="3"></textarea>
 			</div>
 		</div>
 		<input type="hidden" name="id" value="{{$teacher->id}}">
