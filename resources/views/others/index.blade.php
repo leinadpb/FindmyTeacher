@@ -78,11 +78,7 @@
 	  <div class="media-body">
 		<h4 class="media-heading">{{ $t->name }}<span class='work'> - {{ $t->work }}</span></h4>
 		<p>
-			@if(strlen($t->description) > 70)
-				{{ Str::limit($t->description, 70)}}
-			@else
-				{{ $t->description }}
-			@endif
+			{{ $t->description }}
 		</p>
 		<br>
 	  	<a type="button" class="btn btn-info btn-sm" href="{{ route('teacher', ['id' => $t->id]) }}" class="each-teacher">Ver detalles</a>
