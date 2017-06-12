@@ -65,7 +65,7 @@ class TeacherController extends Controller
 
         }else if($op == 'byName'){ //Search by name
 
-            $teachers = Teacher::where(strtolower('name'), '=', strtolower($request->input('byText')))->get();
+            $teachers = Teacher::where('name', '=', ucwords($request->input('byText')))->get();
 
         }else{
 
