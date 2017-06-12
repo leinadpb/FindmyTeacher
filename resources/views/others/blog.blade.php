@@ -58,50 +58,42 @@
 				<div class="media-body">
 					<h4 class="media-heading">{{ $p->title }}</h4>
 					{{ $p->content }}
-					<div>
 
-			<!-- prueba -->
-		<div class="actionBox">
+					<!-- prueba -->
+					<div class="actionBox">
 						@if(\Illuminate\Support\Facades\Auth::check())
 							<a type="button" class="btn btn-info btn-sm" href="">Eliminar</a>
 						@endif
-			<ul class="commentList">
+						<br>
 
-				@foreach($p->commentblogs()->orderBy('created_at', 'asc')->get() as $c)
-				<li>
-					<div class="commenterImage">
-					  <img src="{{URL::to('images/comment.ico')}}" />
+						<ul class="commentList">
+							@foreach($p->commentblogs()->orderBy('created_at', 'asc')->get() as $c)
+							<li>
+								<div class="commenterImage">
+								  <img src="{{URL::to('images/comment.ico')}}" />
+								</div>
+								<div class="commentText">
+									<p class="">{{ $c->content }}</p> <span class="date sub-text">On {{ $c->created_at }}</span>
+								</div>
+							</li>
+							@endforeach
+						</ul>
+
 					</div>
-					<div class="commentText">
-						<p class="">{{ $c->content }}</p> <span class="date sub-text">On {{ $c->created_at }}</span>
+					<!-- prueba --><br>
+					<div class="container-fluid myAnswerBox">
+						<form action="{{ route('respond-toPost', ['id' => $p->id]) }}" method="post" class="form-horizontal">
+							<input type="hidden" name="title" value="Anónimo">
+							<input class="form-control" type="text" placeholder="Responder..." name="answer" required>
+							<input type="hidden" name="id" value="{{ $p->id }}">
+							{{ csrf_field() }}
+							<div align="right"><button type="submit" class="btn btn-primary btn-sm">Responder</button></div>
+						</form>
 					</div>
-				</li>
-				@endforeach
-
-			</ul>
-
-		</div>
-		<!-- prueba -->
-							<br>
-						<div class="container-fluid myAnswerBox">
-							<form action="{{ route('respond-toPost', ['id' => $p->id]) }}" method="post" class="form-horizontal">
-								<input type="hidden" name="title" value="Anónimo">
-								<input class="form-control" type="text" placeholder="Responder..." name="answer" required>
-								<input type="hidden" name="id" value="{{ $p->id }}">
-								{{ csrf_field() }}
-								<div align="right"><button type="submit" class="btn btn-primary btn-sm">Responder</button></div>
-							</form>
-						</div>
-					</div>
-					<!-- Nested comments -->
-
-
 				</div>
-
 			</div>
 			<hr>
 		@endforeach
 	</div>
-
 
 @endsection
