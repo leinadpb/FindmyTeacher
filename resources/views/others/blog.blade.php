@@ -60,7 +60,7 @@
 					{{ $p->content }}
 
 					<!-- prueba -->
-					<div class="actionBox">
+					<div class="container-fluid">
 						@if(\Illuminate\Support\Facades\Auth::check())
 							<a type="button" class="btn btn-info btn-sm" href="">Eliminar</a>
 						@endif
