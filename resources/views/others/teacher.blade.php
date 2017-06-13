@@ -2,6 +2,8 @@
 
 @section('content')
 
+
+
 	@if(Session::has('comment'))
 		<div class="row">
 			<div class="col-md-12">
@@ -17,8 +19,9 @@
 		</div>
 	@endif
 
-	<div align="center"><h1 class="myTitle">{{ $teacher->name }}</h1></div>
-	<hr>
+	<div align="center"><h1 class="myTitle">{{ $teacher->name }}<!-- <span class="ratingLink">
+				<button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#ratingModal">Calificar</button></span></h1></div>
+	--><hr></h1></div>
 	<ul class="list-group">
 		<li class="list-group-item"><b>Universidad: </b> {{ $teacher->work }}</li>
 		<li class="list-group-item"><b>Carrera: </b> {{ $teacher->career }}</li>

@@ -20,6 +20,15 @@
     margin-right: 30px;
 }
 
+.ratingLink{
+    color: black;
+    font-size: medium;
+}
+
+.mySegment{
+    margin-bottom: 7px;
+}
+
 .myTitle{
 	font-family: 'Ramabhadra', sans-serif;
 	color: #08ABDE;
